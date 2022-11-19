@@ -11,7 +11,7 @@ namespace BusinessLayer
     public class User
     {
         [Key]
-        public string ID { get; private set; }
+        public int ID { get; private set; }
 
         [Required]
         public string Username { get; set; }
