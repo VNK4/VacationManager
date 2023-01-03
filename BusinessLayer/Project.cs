@@ -10,7 +10,7 @@ namespace BusinessLayer
     public class Project
     {
         [Key]
-        public int ID { get; private set; }
+        public string ID { get; private set; }
 
         [Required]
         public string Name { get; set; }
@@ -18,7 +18,7 @@ namespace BusinessLayer
         [Required]
         public string Description { get; set; }
 
-        public List<Team> Teams { get; set; }
+        public IList<Team> Teams { get; set; }
 
         public Project()
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BusinessLayer
 {
@@ -30,6 +31,8 @@ namespace BusinessLayer
         [Required]
         public string TypeofVacation { get; set; }
 
+        [ForeignKey("User")]
+        public string ApplicantID { get; private set; }
         [Required]
         public User Applicant { get; set; }
 
