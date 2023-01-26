@@ -10,19 +10,19 @@ namespace DataLayer
 {
     public class TeamContext : IDB<Team, string>
     {
-        VacationManagerDbContext context;
+        private readonly VacationManagerDbContext _context;
 
         public TeamContext(VacationManagerDbContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public async Task CreateAsync(Team item)
         {
             try
             {
-                context.Teams.Add(item);
-                await context.SaveChangesAsync();
+                _context.Teams.Add(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace DataLayer
         {
             try
             {
-                return await context.Teams.
+                return await _context.Teams.
                     Include(p => p.Project).
                     Include(t => t.TeamLeaderId).
                     Include(u => u.Users).
@@ -52,8 +52,8 @@ namespace DataLayer
         {
             try
             {
-                return await context.Teams.
-                     Include(p => p.Project).
+                return await _context.Teams.
+                    Include(p => p.Project).
                     Include(t => t.TeamLeaderId).
                     Include(u => u.Users).
                     SingleAsync(t => t.Id == key);
@@ -69,8 +69,8 @@ namespace DataLayer
         {
             try
             {
-                context.Teams.Update(item);
-                await context.SaveChangesAsync();
+                _context.Teams.Update(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -82,9 +82,9 @@ namespace DataLayer
         {
             try
             {
-                Team teamFromDb = await context.Teams.FindAsync(key);
-                context.Teams.Remove(teamFromDb);
-                await context.SaveChangesAsync();
+                var teamFromDb = await _context.Teams.FindAsync(key);
+                _context.Teams.Remove(teamFromDb);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

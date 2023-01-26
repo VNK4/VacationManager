@@ -18,18 +18,17 @@ namespace BusinessLayer
         [Required]
         public string Description { get; set; }
 
-        public IList<Team> Teams { get; set; }
+        public IList<Team> Teams { get; set; } = new List<Team>();
 
-        public Project()
+        private Project()
         {
         }
 
-        public Project(string id, string name, string description)
+        public Project(string name, string description)
         {
-            Id = id;
+            Id = Guid.NewGuid().ToString();
             Name = name;
             Description = description;
-            Teams = new List<Team>();
         }
         
     }

@@ -10,19 +10,19 @@ namespace DataLayer
 {
     public class VacationContext : IDB<Vacation, string>
     {
-        VacationManagerDbContext context;
+        private readonly VacationManagerDbContext _context;
 
         public VacationContext(VacationManagerDbContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public async Task CreateAsync(Vacation item)
         {
             try
             {
-                context.Vacations.Add(item);
-                await context.SaveChangesAsync();
+                _context.Vacations.Add(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace DataLayer
         {
             try
             {
-                return await context.Vacations.
+                return await _context.Vacations.
                     Include(u => u.Applicant).
                     SingleAsync(v => v.Id == key);
             }
@@ -50,7 +50,7 @@ namespace DataLayer
         {
             try
             {
-                return await context.Vacations.
+                return await _context.Vacations.
                     Include(u=> u.Applicant).
                     ToListAsync();
             }
@@ -65,8 +65,8 @@ namespace DataLayer
         {
             try
             {
-                context.Vacations.Update(item);
-                await context.SaveChangesAsync();
+                _context.Vacations.Update(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -79,9 +79,9 @@ namespace DataLayer
         {
             try
             {
-                Vacation vacationFromDb = await context.Vacations.FindAsync(key);
-                context.Vacations.Remove(vacationFromDb);
-                await context.SaveChangesAsync();
+                var vacationFromDb = await _context.Vacations.FindAsync(key);
+                _context.Vacations.Remove(vacationFromDb);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

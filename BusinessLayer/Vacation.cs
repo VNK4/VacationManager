@@ -41,9 +41,9 @@ namespace BusinessLayer
         {
         }
 
-        public Vacation(string id, DateTime beginningDate, DateTime endDate, DateTime dateOfCreation, bool halfDayVacation, bool accepted, string typeofVacation, User applicant)
+        public Vacation(DateTime beginningDate, DateTime endDate, DateTime dateOfCreation, bool halfDayVacation, bool accepted, string typeofVacation, User applicant)
         {
-            Id = id;
+            Id = Guid.NewGuid().ToString();
             BeginningDate = beginningDate;
             EndDate = endDate;
             DateOfCreation = dateOfCreation;

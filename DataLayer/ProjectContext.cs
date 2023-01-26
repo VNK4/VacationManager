@@ -11,21 +11,19 @@ namespace DataLayer
 {
     public class ProjectContext : IDB<Project, string>
     {
-        VacationManagerDbContext context;
+        private readonly VacationManagerDbContext _context;
 
         public ProjectContext(VacationManagerDbContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public async Task CreateAsync(Project item)
         {
             try
             {
-                //TODO: Add team list 
-
-                context.Projects.Add(item);
-                await context.SaveChangesAsync();
+                _context.Projects.Add(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -38,9 +36,9 @@ namespace DataLayer
         {
             try
             {
-                Project projectFromDb = await context.Projects.FindAsync(key);
-                context.Projects.Remove(projectFromDb);
-                await context.SaveChangesAsync();
+                var projectFromDb = await _context.Projects.FindAsync(key);
+                _context.Projects.Remove(projectFromDb);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -53,7 +51,7 @@ namespace DataLayer
         {
             try
             {
-                return await context.Projects.Include(t=> t.Teams).ToListAsync();
+                return await _context.Projects.Include(t=> t.Teams).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -66,7 +64,7 @@ namespace DataLayer
         {
             try
             {
-                return await context.Projects.
+                return await _context.Projects.
                     Include(t => t.Teams).
                     SingleAsync(m => m.Id == key);
             }
@@ -81,8 +79,8 @@ namespace DataLayer
         {
             try
             {
-                context.Projects.Update(item);
-                await context.SaveChangesAsync();
+                _context.Projects.Update(item);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

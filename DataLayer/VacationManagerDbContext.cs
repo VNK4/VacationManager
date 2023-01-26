@@ -13,16 +13,22 @@ namespace DataLayer
 {
     public class VacationManagerDbContext : IdentityDbContext
     {
-        public VacationManagerDbContext() { }
+        public VacationManagerDbContext()
+        {
+            
+        }
 
-        public VacationManagerDbContext(DbContextOptions<VacationManagerDbContext> options) : base(options) { }
+        public VacationManagerDbContext(DbContextOptions<VacationManagerDbContext> options)
+            : base(options)
+        {
+            
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer("Server=IVAN-VIPER\\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
-                optionsBuilder.UseSqlServer("Server=IVANMLADENOV\\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\v11.0;Integrated Security=true;");
             }
             base.OnConfiguring(optionsBuilder);
         }
@@ -34,7 +40,7 @@ namespace DataLayer
 
             //modelBuilder.Entity<Team>().HasOne(t => t.Project).WithMany().HasForeignKey(t => t.ProjectId);
             modelBuilder.Entity<Team>().HasOne(t => t.TeamLeader).WithMany().HasForeignKey(t => t.TeamLeaderId);
-            //modelBuilder.Entity<Team>().HasMany(t => t.Users).WithOne(); //New thing i added for conection between Team and User
+            //modelBuilder.Entity<Team>().HasMany(t => t.Users).WithOne(); //New thing I added for connection between Team and User
 
 
 
@@ -44,7 +50,7 @@ namespace DataLayer
                 new IdentityRole("CEO") { NormalizedName = "CEO" },
                 new IdentityRole("TeamLead") { NormalizedName = "TEAMLEAD" },
                 new IdentityRole("Developer") { NormalizedName = "DEVELOPER" }
-                //,new IdentityRole("Unassigned") { NormalizedName = "UNASSIGNED" }
+                //new IdentityRole("Unassigned") { NormalizedName = "UNASSIGNED" }
                 );
             modelBuilder.Entity<IdentityUser>().HasData(
                 new IdentityUser("Admin") { NormalizedUserName = "ADMIN"});
@@ -59,6 +65,8 @@ namespace DataLayer
         public DbSet<Project> Projects { get; set; }
 
         public DbSet<Vacation> Vacations { get; set; }
+        
+        public DbSet<User> Users { get; set; }
 
     }
 }

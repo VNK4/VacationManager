@@ -19,43 +19,31 @@ namespace BusinessLayer
 
         [ForeignKey("Project")]
         public string ProjectId { get; private set; }
-
-        //[Required]
-        public Project Project { get; set; }
-
-
+        public Project? Project { get; set; }
+        
 
         [ForeignKey("TeamLeader")]
         public string TeamLeaderId { get; private set; }
+        public User? TeamLeader { get; set; }
 
-        //[Required]
-        public User TeamLeader { get; set; }
-
-
-
-        public IList<User> Users { get; set; }
+        public IList<User> Users { get; set; } = new List<User>();
 
         public Team()
         {
         }
 
-        public Team(string id, string name)
+        public Team(string name)
         {
-            Id = id;
+            Id = Guid.NewGuid().ToString();
             Name = name;
-            this.Project = null;       //WHY NULL
-            this.TeamLeader = null;    //WHY NULL
-            this.Users= new List<User>();
-            
         }
 
-        public Team(string id, string name, Project project, User teamLeader) 
-            : this(id, name)
+        public Team(string name, Project? project, User? teamLeader) 
+            : this(name)
         {
             Name = name;
             Project = project;
             TeamLeader = teamLeader;
-            
         }
 
         public override string ToString()

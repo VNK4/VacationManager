@@ -11,59 +11,61 @@ namespace DataLayer
 {
     class IdentityContext
     {
-        UserManager<IdentityUser> userManager;
-        ProjectContext projectContext;
-        TeamContext teamContext;
-        VacationContext vacationContext;
-        VacationManagerDbContext context;
+        private readonly UserManager<User> _userManager;
+        private readonly VacationManagerDbContext _context;
 
-        public IdentityContext(VacationManagerDbContext context, UserManager<IdentityUser> userManager) 
+        public IdentityContext(VacationManagerDbContext context, UserManager<User> userManager) 
         {
-            this.context = context; 
-            this.userManager = userManager;
-            projectContext = new ProjectContext(context);
-            vacationContext = new VacationContext(context);
-            teamContext = new TeamContext(context);
-            
+            _context = context; 
+            _userManager = userManager;
         }
 
-        public async Task SeedDataAsync(string adminPass, string adminUsername) 
+        public async Task SeedDataAsync(string adminUsername, string adminPass) 
         {
-            int userRoles = await context.UserRoles.CountAsync();
+            var userRoles = await _context.UserRoles.CountAsync();
             if (userRoles == 0)
             {
-                await ConfigureAdminAccountAsync(adminPass, adminUsername);
+                await ConfigureAdminAccountAsync(adminUsername, adminPass);
             }
         }
 
-        public async Task ConfigureAdminAccountAsync(string password, string username) 
+        public async Task ConfigureAdminAccountAsync(string username, string password) 
         {
-            IdentityUser adminIdentityUser = await context.Users.FirstAsync();
-            await userManager.AddToRoleAsync(adminIdentityUser, Role.CEO.ToString());
-            await userManager.AddPasswordAsync(adminIdentityUser, password);
-            await userManager.SetUserNameAsync(adminIdentityUser, username);
+            var adminIdentityUser = await _context.Users.FirstAsync();
+            await _userManager.AddToRoleAsync(adminIdentityUser, Role.CEO.ToString());
+            await _userManager.AddPasswordAsync(adminIdentityUser, password);
+            await _userManager.SetUserNameAsync(adminIdentityUser, username);
         }
 
-        public async Task CreateUserAsync(string username, string password, string firstname, string lastname, Role role, Team team, IList<Vacation> vacations) 
+        public async Task CreateUserAsync(string username, string password, string firstname, string lastname, Role role)
         {
             try
             {
-                IdentityUser identityUser = new IdentityUser(username);
-                identityUser.UserName = username;
-                await userManager.CreateAsync(identityUser, password);
+                var user = new User
+                {
+                    UserName = username,
+                    FirstName = firstname,
+                    LastName = lastname,
+                    Role = role
+                };
+                
+                await _userManager.CreateAsync(user, password);
 
-                if (role == Role.CEO)
+                switch (role)
                 {
-                    await userManager.AddToRoleAsync(identityUser, Role.CEO.ToString());
-                }
-                else
-                {
-                    await userManager.AddToRoleAsync(identityUser, Role.Unassigned.ToString());
+                    case Role.Developer:
+                        await _userManager.AddToRoleAsync(user, Role.Developer.ToString());
+                        break;
+                    case Role.TeamLead:
+                        await _userManager.AddToRoleAsync(user, Role.TeamLead.ToString());
+                        break;
+                    case Role.Unassigned:
+                        await _userManager.AddToRoleAsync(user, Role.Unassigned.ToString());
+                        break;
                 }
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
@@ -72,28 +74,25 @@ namespace DataLayer
         {
             try
             {
-                IdentityUser identityUser = await userManager.FindByNameAsync(username);
+                var user = await _userManager.FindByNameAsync(username);
 
-                if (identityUser == null)
+                if (user == null)
                 {
                     return null;
                 }
 
-                IdentityResult result = await userManager.PasswordValidators[0].ValidateAsync(userManager, identityUser, password);
+                var result = await _userManager.PasswordValidators[0].ValidateAsync(_userManager, user, password);
 
                 if (result.Succeeded)
                 {
-                    return (User)await context.Users.FindAsync(identityUser.Id);
+                    return await _context.Users.FindAsync(user.Id);
                 }
-                else
-                {
-                    return null;
-                }
+
+                return null;
             }
             catch (Exception ex )
             {
-
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -101,25 +100,23 @@ namespace DataLayer
         {
             try
             {
-                return (IEnumerable < User >) await context.Users.ToListAsync();
+                return await _context.Users.ToListAsync();
             }
             catch (Exception ex )
             {
-
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task<User> FindUserbyNameAsync(string name) 
+        public async Task<User> FindUserByNameAsync(string name) 
         {
             try
             {
-                return (User)await userManager.FindByNameAsync(name);
+                return await _userManager.FindByNameAsync(name);
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -127,25 +124,46 @@ namespace DataLayer
         {
             try
             {
-                User user = await FindUserbyNameAsync(name);
+                var user = await FindUserByNameAsync(name);
 
                 if (user == null)
                 {
                     throw new InvalidOperationException("User not found!");
                 }
 
-                await userManager.DeleteAsync(user);
+                await _userManager.DeleteAsync(user);
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message);
             }
         }
 
-        public async Task UpdateUserAsync(string id, string firstName, string lastname) 
+        public async Task UpdateUserAsync(string id, string username, string firstName, string lastname, Team team, Role role) 
         {
-            
+            try
+            {
+                var user = await FindUserByNameAsync(username);
+                
+                if (user == null)
+                {
+                    throw new InvalidOperationException("User not found!");
+                }
+                
+                user.UserName = username;
+                user.FirstName = firstName;
+                user.LastName = lastname;
+                user.Team = team;
+                user.Role = role;
+
+                await _userManager.RemoveFromRoleAsync(user, user.Role.ToString());
+                await _userManager.AddToRoleAsync(user, Role.CEO.ToString());
+                await _userManager.UpdateAsync(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
