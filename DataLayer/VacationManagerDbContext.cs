@@ -28,7 +28,8 @@ namespace DataLayer
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\v11.0;Integrated Security=true;");
+                // Replace with your server address
+                optionsBuilder.UseSqlServer(@"Server=[YOURADDRESS];Database=VacationManagerDb;Trusted_Connection=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }
