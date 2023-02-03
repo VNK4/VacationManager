@@ -58,5 +58,9 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
+    public async Task<IActionResult> AccessDenied()
+    {
+        return View();
+    }
     
 }

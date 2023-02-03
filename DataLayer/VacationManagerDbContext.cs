@@ -29,7 +29,7 @@ namespace DataLayer
             if (!optionsBuilder.IsConfigured)
             {
                 // Replace with your server address
-                optionsBuilder.UseSqlServer(@"Server=DESKTOP-HJSDM9L\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=[YOURADDRESS];Database=VacationManagerDb;Trusted_Connection=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }
@@ -38,13 +38,7 @@ namespace DataLayer
         {
             modelBuilder.Entity<User>().HasMany(v => v.Vacations).WithOne(v => v.Applicant).HasForeignKey(m => m.ApplicantID);
             modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
-
-            //modelBuilder.Entity<Team>().HasOne(t => t.Project).WithMany().HasForeignKey(t => t.ProjectId);
             modelBuilder.Entity<Team>().HasOne(t => t.TeamLeader).WithMany().HasForeignKey(t => t.TeamLeaderId);
-            //modelBuilder.Entity<Team>().HasMany(t => t.Users).WithOne(); //New thing I added for connection between Team and User
-
-
-
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<IdentityRole>().HasData(
@@ -55,8 +49,6 @@ namespace DataLayer
                 );
             modelBuilder.Entity<IdentityUser>().HasData(
                 new IdentityUser("Admin") { NormalizedUserName = "ADMIN"});
-
-            //modelBuilder.Entity<User>().HasRequired(u => u.Team).WithMany().WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }
