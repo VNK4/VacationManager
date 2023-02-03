@@ -1,0 +1,105 @@
+@using PresentationLayerWeb.Controllers
+@using BusinessLayer
+@model IEnumerable<BusinessLayer.Vacation>
+
+@{
+
+}
+
+<h1>Vacations</h1>
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Index">
+            <div class="form-group">
+                <label class="control-label">Filter:</label>
+                <input type="date" name="searchString" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Filter by:</label>
+                <select id="filter" name="filter" asp-items="@Html.GetEnumSelectList<VacationsController.Filter>()" class="form-control"></select>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary w-100"/>
+            </div>
+        </form>
+        <hr/>
+        <p>
+            <a class="btn btn-primary w-100" asp-action="Create">Create New Vacation</a>
+        </p>
+    </div>
+    <div class="col-8">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeginningDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfCreation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HalfDayVacation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Accepted)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VacationType)
+                </th>
+                @if (User.IsInRole(Role.CEO.ToString()) || User.IsInRole(Role.TeamLead.ToString()))
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Applicant)
+                    </th>
+                }
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var vacation in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.BeginningDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.EndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.DateOfCreation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.HalfDayVacation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.Accepted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => vacation.VacationType)
+                    </td>
+                    @if (User.IsInRole(Role.CEO.ToString()) || User.IsInRole(Role.TeamLead.ToString()))
+                    {
+                        <td>
+                            @Html.DisplayFor(modelItem => vacation.Applicant.UserName)
+                        </td>
+                    }
+                    <td>
+                        @if (User.IsInRole(Role.CEO.ToString()) || User.IsInRole(Role.TeamLead.ToString()))
+                        {
+                            <a class="btn btn-primary w-100 align-items-center" asp-action="Approve" asp-route-id="@vacation.Id">Approve Vacation</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary w-100 align-items-center" asp-action="Info" asp-route-id="@vacation.Id">View Vacation Information</a>
+                        }
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

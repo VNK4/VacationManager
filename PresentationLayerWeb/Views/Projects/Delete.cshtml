@@ -1,0 +1,59 @@
+@model BusinessLayer.Project
+
+@{
+    ViewData["Title"] = "Delete Project";
+}
+
+<h1>Delete Project</h1>
+
+<h3>Are you sure you want to delete this project?</h3>
+<div class="col-6">
+    <hr/>
+    <dl class="row">
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Team Leader
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Teams)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeamLeader.UserName)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <p>
+            <input class="btn btn-danger w-100" type="submit" value="Delete"/>
+        </p>
+        <a class="btn btn-primary w-100" asp-action="Info" asp-route-id="@Model.Id">Back to Project</a>
+    </form>
+</div>

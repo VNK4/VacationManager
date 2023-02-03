@@ -9,7 +9,7 @@ using BusinessLayer;
 
 namespace DataLayer
 {
-    class IdentityContext
+    public class IdentityContext
     {
         private readonly UserManager<User> _userManager;
         private readonly VacationManagerDbContext _context;
@@ -49,20 +49,30 @@ namespace DataLayer
                     Role = role
                 };
                 
-                await _userManager.CreateAsync(user, password);
-
-                switch (role)
+                IdentityResult result = await _userManager.CreateAsync(user, password);
+                if (result.Succeeded)
                 {
-                    case Role.Developer:
-                        await _userManager.AddToRoleAsync(user, Role.Developer.ToString());
-                        break;
-                    case Role.TeamLead:
-                        await _userManager.AddToRoleAsync(user, Role.TeamLead.ToString());
-                        break;
-                    case Role.Unassigned:
-                        await _userManager.AddToRoleAsync(user, Role.Unassigned.ToString());
-                        break;
+                    switch (role)
+                    {
+                        case Role.Developer:
+                            await _userManager.AddToRoleAsync(user, Role.Developer.ToString());
+                            break;
+                        case Role.TeamLead:
+                            await _userManager.AddToRoleAsync(user, Role.TeamLead.ToString());
+                            break;
+                        case Role.Unassigned:
+                            await _userManager.AddToRoleAsync(user, Role.Unassigned.ToString());
+                            break;
+                        case Role.CEO:
+                            await _userManager.AddToRoleAsync(user, Role.CEO.ToString());
+                            break;
+                    }
                 }
+                else
+                {
+                    throw new ArgumentException("Duplicate username!");
+                }
+
             }
             catch (Exception ex)
             {
@@ -139,7 +149,7 @@ namespace DataLayer
             }
         }
 
-        public async Task UpdateUserAsync(string id, string username, string firstName, string lastname, Team team, Role role) 
+        public async Task UpdateUserAsync(string username, string firstName, string lastname, Team team, Role role) 
         {
             try
             {
@@ -154,16 +164,21 @@ namespace DataLayer
                 user.FirstName = firstName;
                 user.LastName = lastname;
                 user.Team = team;
-                user.Role = role;
 
                 await _userManager.RemoveFromRoleAsync(user, user.Role.ToString());
-                await _userManager.AddToRoleAsync(user, Role.CEO.ToString());
+                user.Role = role;
+                await _userManager.AddToRoleAsync(user, user.Role.ToString());
                 await _userManager.UpdateAsync(user);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public async Task ChangeUserPasswordAsync(User user, string currentPassword, string newPassword)
+        {
+            await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
         }
     }
 }

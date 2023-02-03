@@ -1,0 +1,56 @@
+﻿@using BusinessLayer
+@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h1>Create User</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control"/>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control"/>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" type="password" class="form-control"/>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role" class="control-label">Role</label>
+                <select asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()" class="form-control"></select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <p>
+                    <input type="submit" value="Create User" class="btn btn-primary w-100"/>
+                </p>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-primary w-100" asp-action="Index">Back to Users</a>
+            </div>
+        </form>
+    </div>
+</div>

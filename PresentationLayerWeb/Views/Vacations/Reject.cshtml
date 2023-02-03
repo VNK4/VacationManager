@@ -1,0 +1,53 @@
+﻿@model BusinessLayer.Vacation
+
+@{
+    ViewData["Title"] = "Reject Vacation";
+}
+
+<h1>Reject Vacation</h1>
+
+<h3>Are you sure you want to reject this vacation?</h3>
+<h4>(This will also delete it!)</h4>
+<div class="col-6">
+    <hr/>
+    <dl class="row">
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.BeginningDate)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.BeginningDate)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.DateOfCreation)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.DateOfCreation)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.VacationType)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.VacationType)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Applicant)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.Applicant.UserName)
+        </dd>
+    </dl>
+
+    <form asp-action="Reject">
+        <input type="hidden" asp-for="Id"/>
+        <p>
+            <input class="btn btn-danger w-100" type="submit" value="Reject"/>
+        </p>
+        <a class="btn btn-primary w-100" asp-action="Approve" asp-route-id="@Model.Id">Back to Approval Menu</a>
+    </form>
+</div>

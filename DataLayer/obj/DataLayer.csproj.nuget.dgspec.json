@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\School\\SoftEngi\\VacationManagerFIX\\DataLayer\\DataLayer.csproj": {}
+    "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj": {}
   },
   "projects": {
-    "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\BusinessLayer.csproj": {
+    "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\Vanka\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\obj\\",
+        "outputPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\School\\SoftEngi\\VacationManagerFIX\\DataLayer\\DataLayer.csproj": {
+    "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManagerFIX\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "D:\\School\\SoftEngi\\VacationManagerFIX\\DataLayer\\DataLayer.csproj",
+        "projectPath": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj",
         "packagesPath": "C:\\Users\\Vanka\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\SoftEngi\\VacationManagerFIX\\DataLayer\\obj\\",
+        "outputPath": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "D:\\School\\SoftEngi\\VacationManagerFIX\\BusinessLayer\\BusinessLayer.csproj"
+              "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj"
               }
             }
           }

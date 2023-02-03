@@ -18,7 +18,7 @@ namespace BusinessLayer
         [Required]
         public string Description { get; set; }
 
-        public IList<Team> Teams { get; set; } = new List<Team>();
+        public List<Team> Teams { get; set; } = new List<Team>();
 
         private Project()
         {

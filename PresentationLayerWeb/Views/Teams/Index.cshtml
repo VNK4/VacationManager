@@ -1,0 +1,67 @@
+@using PresentationLayerWeb.Controllers
+@model IEnumerable<BusinessLayer.Team>
+
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<h1>Teams</h1>
+<div class="row">
+    <div class="col-4">
+        <form asp-action="Index">
+            <div class="form-group">
+                <label class="control-label">Filter:</label>
+                <input type="text" name="searchString" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Filter by:</label>
+                <select id="filter" name="filter" asp-items="@Html.GetEnumSelectList<TeamsController.Filter>()" class="form-control"></select>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary w-100"/>
+            </div>
+        </form>
+        <hr/>
+        <p>
+            <a class="btn btn-primary w-100" asp-action="Create">Create New Team</a>
+        </p>
+    </div>
+    <div class="col-8">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project)
+                </th>
+                <th>
+                    Team Leader
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var team in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => team.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => team.Project.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => team.TeamLeader.UserName)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary w-100 align-items-center" asp-action="Info" asp-route-id="@team.Id">View Team Information</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

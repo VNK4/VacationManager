@@ -28,7 +28,8 @@ namespace DataLayer
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\v11.0;Integrated Security=true;");
+                // Replace with your server address
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-HJSDM9L\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }
@@ -49,8 +50,8 @@ namespace DataLayer
             modelBuilder.Entity<IdentityRole>().HasData(
                 new IdentityRole("CEO") { NormalizedName = "CEO" },
                 new IdentityRole("TeamLead") { NormalizedName = "TEAMLEAD" },
-                new IdentityRole("Developer") { NormalizedName = "DEVELOPER" }
-                //new IdentityRole("Unassigned") { NormalizedName = "UNASSIGNED" }
+                new IdentityRole("Developer") { NormalizedName = "DEVELOPER" },
+                new IdentityRole("Unassigned") { NormalizedName = "UNASSIGNED" }
                 );
             modelBuilder.Entity<IdentityUser>().HasData(
                 new IdentityUser("Admin") { NormalizedUserName = "ADMIN"});

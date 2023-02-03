@@ -1,0 +1,45 @@
+﻿@model BusinessLayer.User
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h1>Delete User</h1>
+
+<h3>Are you sure you want to delete this user?</h3>
+<div class="col-6">
+    <hr/>
+    <dl class="row">
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-3">
+            @Html.DisplayNameFor(model => model.Team.Name)
+        </dt>
+        <dd class="col-9">
+            @Html.DisplayFor(model => model.Team.Name)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <p>
+            <input class="btn btn-danger w-100" type="submit" value="Delete"/>
+        </p>
+        <a class="btn btn-primary w-100" asp-action="Info" asp-route-id="@Model.Id">Back to User</a>
+    </form>
+</div>
