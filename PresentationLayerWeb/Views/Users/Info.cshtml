@@ -5,7 +5,7 @@
     ViewData["Title"] = "User Information";
 }
 
-<div class="container-fluid">
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
     <h1>View User Information</h1>
     <hr/>
     <div class="row">
@@ -38,10 +38,13 @@
                     <select asp-for="TeamId" asp-items="ViewBag.TeamId" class="form-control"></select>
                     <span asp-validation-for="TeamId" class="text-danger"></span>
                 </div>
-                <div class="col-6 form-group">
-                    <a class="btn btn-primary w-100" asp-action="ChangePassword" asp-route-id="@Model.Id">Change Password</a>
-                </div>
+
                 <div class="row">
+                    <p>
+                        <div class="form-group">
+                            <a class="btn btn-primary w-100" asp-action="ChangePassword" asp-route-id="@Model.Id">Change Password</a>
+                        </div>
+                    </p>
                     <p>
                         <div class="col-6 form-group">
                             <input type="submit" value="Save Changes" class="btn btn-primary w-100"/>

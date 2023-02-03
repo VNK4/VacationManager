@@ -12,29 +12,28 @@ namespace DataLayer
     public class IdentityContext
     {
         private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly VacationManagerDbContext _context;
 
-        public IdentityContext(VacationManagerDbContext context, UserManager<User> userManager) 
+        public IdentityContext(VacationManagerDbContext context, UserManager<User> userManager, RoleManager<IdentityRole> roleManager) 
         {
             _context = context; 
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
-        public async Task SeedDataAsync(string adminUsername, string adminPass) 
+        public async Task SeedDataAsync(string adminUsername, string adminPass)
         {
-            var userRoles = await _context.UserRoles.CountAsync();
-            if (userRoles == 0)
+            var admins = _context.Users.Where(u => u.Role == Role.CEO).ToList();
+            if (admins.Count == 0)
             {
-                await ConfigureAdminAccountAsync(adminUsername, adminPass);
+                await CreateAdminAccountAsync(adminUsername, adminPass);
             }
         }
 
-        public async Task ConfigureAdminAccountAsync(string username, string password) 
+        private async Task CreateAdminAccountAsync(string username, string password)
         {
-            var adminIdentityUser = await _context.Users.FirstAsync();
-            await _userManager.AddToRoleAsync(adminIdentityUser, Role.CEO.ToString());
-            await _userManager.AddPasswordAsync(adminIdentityUser, password);
-            await _userManager.SetUserNameAsync(adminIdentityUser, username);
+            await CreateUserAsync(username, password, "admin", "admin", Role.CEO);
         }
 
         public async Task CreateUserAsync(string username, string password, string firstname, string lastname, Role role)

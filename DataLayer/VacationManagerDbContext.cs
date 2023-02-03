@@ -47,8 +47,6 @@ namespace DataLayer
                 new IdentityRole("Developer") { NormalizedName = "DEVELOPER" },
                 new IdentityRole("Unassigned") { NormalizedName = "UNASSIGNED" }
                 );
-            modelBuilder.Entity<IdentityUser>().HasData(
-                new IdentityUser("Admin") { NormalizedUserName = "ADMIN"});
 
             base.OnModelCreating(modelBuilder);
         }

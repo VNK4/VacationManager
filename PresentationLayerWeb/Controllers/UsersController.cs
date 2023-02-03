@@ -9,7 +9,7 @@ using PresentationLayerWeb.Models;
 
 namespace PresentationLayerWeb.Controllers;
 
-[Authorize(Roles="CEO")]
+[AllowAnonymous]
 public class UsersController : Controller
 {
     private readonly VacationManagerDbContext _context;

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using DataLayer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PresentationLayerWeb.Models;
@@ -9,19 +10,17 @@ namespace PresentationLayerWeb.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IdentityContext _identityContext;
+    
+    public HomeController(ILogger<HomeController> logger, IdentityContext identityContext)
     {
         _logger = logger;
+        _identityContext = identityContext;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
+        await _identityContext.SeedDataAsync("administrator", "admin123");
         return View();
     }
 
