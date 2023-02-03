@@ -21,15 +21,13 @@ namespace BusinessLayer
 
         [Required]
         public DateTime DateOfCreation { get; set; }
-
-        [Required]
+        
         public bool HalfDayVacation { get; set; }
-
-        [Required]
+        
         public bool Accepted { get; set; }
 
         [Required]
-        public string TypeofVacation { get; set; }
+        public VacationType VacationType { get; set; }
 
 
         [ForeignKey("User")]
@@ -41,16 +39,21 @@ namespace BusinessLayer
         {
         }
 
-        public Vacation(DateTime beginningDate, DateTime endDate, DateTime dateOfCreation, bool halfDayVacation, bool accepted, string typeofVacation, User applicant)
+        public Vacation(DateTime beginningDate, DateTime endDate, VacationType vacationType, User applicant)
         {
             Id = Guid.NewGuid().ToString();
             BeginningDate = beginningDate;
             EndDate = endDate;
-            DateOfCreation = dateOfCreation;
+            DateOfCreation = DateTime.Now;
+            VacationType = vacationType;
+            Applicant = applicant;
+        }
+
+        public Vacation(DateTime beginningDate, DateTime endDate, bool halfDayVacation, bool accepted, VacationType vacationType, User applicant)
+            : this(beginningDate, endDate, vacationType, applicant)
+        {
             HalfDayVacation = halfDayVacation;
             Accepted = accepted;
-            TypeofVacation = typeofVacation;
-            Applicant = applicant;
         }
     }
 }

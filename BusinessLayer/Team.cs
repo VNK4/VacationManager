@@ -18,12 +18,12 @@ namespace BusinessLayer
 
 
         [ForeignKey("Project")]
-        public string ProjectId { get; private set; }
-        public Project? Project { get; set; }
+        public string ProjectId { get; set; }
+        public Project Project { get; set; }
         
 
         [ForeignKey("TeamLeader")]
-        public string TeamLeaderId { get; private set; }
+        public string? TeamLeaderId { get; set; }
         public User? TeamLeader { get; set; }
 
         public IList<User> Users { get; set; } = new List<User>();
@@ -32,14 +32,15 @@ namespace BusinessLayer
         {
         }
 
-        public Team(string name)
+        public Team(string name, Project project)
         {
             Id = Guid.NewGuid().ToString();
             Name = name;
+            Project = project;
         }
 
-        public Team(string name, Project? project, User? teamLeader) 
-            : this(name)
+        public Team(string name, Project project, User teamLeader) 
+            : this(name, project)
         {
             Name = name;
             Project = project;

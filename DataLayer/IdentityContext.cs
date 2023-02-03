@@ -9,7 +9,7 @@ using BusinessLayer;
 
 namespace DataLayer
 {
-    class IdentityContext
+    public class IdentityContext
     {
         private readonly UserManager<User> _userManager;
         private readonly VacationManagerDbContext _context;
@@ -49,20 +49,30 @@ namespace DataLayer
                     Role = role
                 };
                 
-                await _userManager.CreateAsync(user, password);
-
-                switch (role)
+                IdentityResult result = await _userManager.CreateAsync(user, password);
+                if (result.Succeeded)
                 {
-                    case Role.Developer:
-                        await _userManager.AddToRoleAsync(user, Role.Developer.ToString());
-                        break;
-                    case Role.TeamLead:
-                        await _userManager.AddToRoleAsync(user, Role.TeamLead.ToString());
-                        break;
-                    case Role.Unassigned:
-                        await _userManager.AddToRoleAsync(user, Role.Unassigned.ToString());
-                        break;
+                    switch (role)
+                    {
+                        case Role.Developer:
+                            await _userManager.AddToRoleAsync(user, Role.Developer.ToString());
+                            break;
+                        case Role.TeamLead:
+                            await _userManager.AddToRoleAsync(user, Role.TeamLead.ToString());
+                            break;
+                        case Role.Unassigned:
+                            await _userManager.AddToRoleAsync(user, Role.Unassigned.ToString());
+                            break;
+                        case Role.CEO:
+                            await _userManager.AddToRoleAsync(user, Role.CEO.ToString());
+                            break;
+                    }
                 }
+                else
+                {
+                    throw new ArgumentException("Duplicate username!");
+                }
+
             }
             catch (Exception ex)
             {

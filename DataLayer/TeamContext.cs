@@ -37,7 +37,7 @@ namespace DataLayer
             {
                 return await _context.Teams.
                     Include(p => p.Project).
-                    Include(t => t.TeamLeaderId).
+                    Include(t => t.TeamLeader).
                     Include(u => u.Users).
                     ToArrayAsync();
             }
@@ -54,7 +54,7 @@ namespace DataLayer
             {
                 return await _context.Teams.
                     Include(p => p.Project).
-                    Include(t => t.TeamLeaderId).
+                    Include(t => t.TeamLeader).
                     Include(u => u.Users).
                     SingleAsync(t => t.Id == key);
             }
