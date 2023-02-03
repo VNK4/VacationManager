@@ -13,13 +13,13 @@ namespace BusinessLayer
         [Key]
         public string Id { get; private set; }
 
-        [Required]
+        [Required, DataType(DataType.Date)]
         public DateTime BeginningDate { get; set; }
 
-        [Required]
+        [Required, DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
-        [Required]
+        [Required, DataType(DataType.Date)]
         public DateTime DateOfCreation { get; set; }
         
         public bool HalfDayVacation { get; set; }

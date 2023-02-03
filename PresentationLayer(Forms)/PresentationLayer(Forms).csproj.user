@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="ApproveVacation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateVacation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainMenu_(user).cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainMenu_%28CEO%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewProjectInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewTeamInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewTeams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewUserInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewVacations_%28User%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ViewVactions_%28CEO%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
