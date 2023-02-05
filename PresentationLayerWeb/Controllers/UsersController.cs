@@ -63,18 +63,24 @@ public class UsersController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("Username,FirstName,LastName,Password,ConfirmPassword,Role")] RegisterViewModel registerViewModel)
     {
-        var username = registerViewModel.Username;
-        var firstName = registerViewModel.FirstName;
-        var lastName = registerViewModel.LastName;
-        var password = registerViewModel.Password;
-        var confirmation = registerViewModel.ConfirmPassword;
-        var role = registerViewModel.Role;
+        if (ModelState.IsValid)
+        {
+            var username = registerViewModel.Username;
+            var firstName = registerViewModel.FirstName;
+            var lastName = registerViewModel.LastName;
+            var password = registerViewModel.Password;
+            var role = registerViewModel.Role;
 
-        if (password != confirmation) 
+            if (await _identityContext.FindUserByNameAsync(username) != null)
+            {
+                return View(registerViewModel);
+            }
+
+            await _identityContext.CreateUserAsync(username, password, firstName, lastName, role);
+            return RedirectToAction(nameof(Index));
+        }
+        else
             return View(registerViewModel);
-        
-        await _identityContext.CreateUserAsync(username, password, firstName, lastName, role);
-        return RedirectToAction(nameof(Index));
     }
     
     public async Task<IActionResult> Info(string id)

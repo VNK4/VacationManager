@@ -69,7 +69,7 @@ namespace DataLayer
                 }
                 else
                 {
-                    throw new ArgumentException("Duplicate username!");
+                    throw new ArgumentException("Error creating user!");
                 }
 
             }

@@ -29,7 +29,7 @@ public class VacationViewModel : IValidatableObject
 
         if (BeginningDate < DateTime.Today || EndDate < DateTime.Today)
         {
-            yield return new ValidationResult("The beginning and end date must be earlier than the current date!",
+            yield return new ValidationResult("The beginning and end date must be later than the current date!",
                 new[] { nameof(BeginningDate), nameof(EndDate) });
         }
     }

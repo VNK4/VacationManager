@@ -46,12 +46,21 @@
                         </div>
                     </p>
                     <p>
-                        <div class="col-6 form-group">
-                            <input type="submit" value="Save Changes" class="btn btn-primary w-100"/>
-                        </div>
-                        <div class="col-6 form-group">
-                            <a class="btn btn-danger w-100" asp-action="Delete" asp-route-id="@Model.Id">Delete User</a>
-                        </div>
+                        @if (Model.Role == Role.CEO || Model.Username == User.Identity.Name)
+                        {
+                            <div class="form-group">
+                                <input type="submit" value="Save Changes" class="btn btn-primary w-100"/>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-6 form-group">
+                                <input type="submit" value="Save Changes" class="btn btn-primary w-100"/>
+                            </div>
+                            <div class="col-6 form-group">
+                                <a class="btn btn-danger w-100" asp-action="Delete" asp-route-id="@Model.Id">Delete User</a>
+                            </div>
+                        }
                     </p>
                     <div class="form-group">
                         <p>
