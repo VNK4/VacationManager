@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\images\\firefox_JTw29DLBul_04dd.png",
+      "PackagePath": "staticwebassets\\images\\firefox_JTw29DLBul_04dd.png"
+    },
+    {
+      "Id": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\images\\firefox_JTw29DLBul_7478.png",
+      "PackagePath": "staticwebassets\\images\\firefox_JTw29DLBul_7478.png"
+    },
+    {
       "Id": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

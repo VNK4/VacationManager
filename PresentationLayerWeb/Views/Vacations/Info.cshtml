@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-6">
             <h3>Vacation info:</h3>
-            <form asp-action="Info">
+            <form asp-action="Info" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="VacationType" class="control-label"></label>
@@ -33,6 +33,15 @@
                     <input asp-for="DateOfCreation" class="form-control" disabled/>
                     <span asp-validation-for="DateOfCreation" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="VacationImage" class="control-label"></label>
+                    <input asp-for="VacationImage" class="form-control"/>
+                    <span asp-validation-for="VacationImage" class="text-danger"></span>
+                </div>
+                @if (Model.ImageFilePath != null)
+                {
+                    <img src="~/images/@Model.ImageFilePath" alt="Image"/>
+                }
                 <div class="row">
                     <p>
                         <div class="col-6 form-group">

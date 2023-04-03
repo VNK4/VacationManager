@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/gcFRwAMj0JyCptn/d5OGtaj+1V4ZXVWTHtCdjCEI7U=",
+  "Hash": "4RF22Y+20k4gjyL42D46IP5g68SbnuR+4Q6amDwhBb4=",
   "Source": "PresentationLayerWeb",
   "BasePath": "_content/PresentationLayerWeb",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\images\\firefox_JTw29DLBul_04dd.png",
+      "SourceId": "PresentationLayerWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\",
+      "BasePath": "_content/PresentationLayerWeb",
+      "RelativePath": "images/firefox_JTw29DLBul_04dd.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\firefox_JTw29DLBul_04dd.png"
+    },
+    {
+      "Identity": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\images\\firefox_JTw29DLBul_7478.png",
+      "SourceId": "PresentationLayerWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\",
+      "BasePath": "_content/PresentationLayerWeb",
+      "RelativePath": "images/firefox_JTw29DLBul_7478.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\firefox_JTw29DLBul_7478.png"
     },
     {
       "Identity": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\wwwroot\\js\\site.js",
