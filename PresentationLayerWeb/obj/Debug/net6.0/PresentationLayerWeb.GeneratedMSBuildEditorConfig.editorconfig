@@ -9,117 +9,117 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PresentationLayerWeb
 build_property.RootNamespace = PresentationLayerWeb
-build_property.ProjectDir = D:\School\SoftEngi\VacationManager\PresentationLayerWeb\
+build_property.ProjectDir = C:\Users\Admin\Desktop\Vacation manager\PresentationLayerWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\School\SoftEngi\VacationManager\PresentationLayerWeb
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\Vacation manager\PresentationLayerWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Account/AccessDenied.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Account/Login.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Home/Index.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Projects/Create.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Projects/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Projects/Delete.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Projects/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Projects/Index.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Projects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Projects/Info.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Projects/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Shared/Error.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Teams/Create.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Teams/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Teams/Delete.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Teams/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Teams/Index.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Teams/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Teams/Info.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Teams/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbXNcSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Users/ChangePassword.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Users/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Users/Create.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Users/Delete.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Users/Index.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Users/Info.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Users/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Approve.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Approve.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXEFwcHJvdmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Create.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Delete.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Index.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Info.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Vacations/Reject.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Vacations/Reject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFjYXRpb25zXFJlamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/_ViewImports.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/School/SoftEngi/VacationManager/PresentationLayerWeb/Views/Shared/_Layout.cshtml]
+[C:/Users/Admin/Desktop/Vacation manager/PresentationLayerWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-do2zosihmp

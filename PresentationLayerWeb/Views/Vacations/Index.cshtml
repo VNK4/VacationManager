@@ -90,7 +90,14 @@
                     <td>
                         @if (User.IsInRole(Role.CEO.ToString()) || User.IsInRole(Role.TeamLead.ToString()))
                         {
-                            <a class="btn btn-primary w-100 align-items-center" asp-action="Approve" asp-route-id="@vacation.Id">Approve Vacation</a>
+                            if (vacation.Accepted)
+                            {
+                                <a class="btn btn-primary w-100 align-items-center" asp-action="Info" asp-route-id="@vacation.Id">View Vacation Information</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-primary w-100 align-items-center" asp-action="Approve" asp-route-id="@vacation.Id">Approve Vacation</a>
+                            }
                         }
                         else
                         {

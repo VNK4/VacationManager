@@ -29,7 +29,8 @@ namespace DataLayer
             if (!optionsBuilder.IsConfigured)
             {
                 // Replace with your server address
-                optionsBuilder.UseSqlServer(@"Server=[YOURADDRESS];Database=VacationManagerDb;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer(@"Server=DESKTOP-HJSDM9L\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-JDCA8S0\SQLEXPRESS;Database=VacationManagerDb;Trusted_Connection=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }

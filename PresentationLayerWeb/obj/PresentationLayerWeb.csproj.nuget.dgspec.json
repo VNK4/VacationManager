@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\PresentationLayerWeb.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Vacation manager\\PresentationLayerWeb\\PresentationLayerWeb.csproj": {}
   },
   "projects": {
-    "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\Vanka\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vanka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.0, )"
@@ -65,24 +69,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Vanka\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vanka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,8 +101,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj"
               }
             }
           }
@@ -152,24 +156,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\PresentationLayerWeb.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Vacation manager\\PresentationLayerWeb\\PresentationLayerWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\PresentationLayerWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Vacation manager\\PresentationLayerWeb\\PresentationLayerWeb.csproj",
         "projectName": "PresentationLayerWeb",
-        "projectPath": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\PresentationLayerWeb.csproj",
-        "packagesPath": "C:\\Users\\Vanka\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\SoftEngi\\VacationManager\\PresentationLayerWeb\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\PresentationLayerWeb\\PresentationLayerWeb.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\PresentationLayerWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vanka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -184,11 +188,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "D:\\School\\SoftEngi\\VacationManager\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "D:\\School\\SoftEngi\\VacationManager\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\Vacation manager\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -237,7 +241,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

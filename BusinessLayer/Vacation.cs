@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net.Mime;
 
 namespace BusinessLayer
 {
@@ -36,12 +37,13 @@ namespace BusinessLayer
         public string ApplicantID { get; private set; }
         [Required]
         public User Applicant { get; set; }
-
+        
+        public string? ImageFilePath { get; set; }
         private Vacation()
         {
         }
 
-        public Vacation(DateTime beginningDate, DateTime endDate, VacationType vacationType, User applicant)
+        public Vacation(DateTime beginningDate, DateTime endDate, VacationType vacationType, User applicant, string? imageFilePath)
         {
             Id = Guid.NewGuid().ToString();
             BeginningDate = beginningDate;
@@ -49,13 +51,8 @@ namespace BusinessLayer
             DateOfCreation = DateTime.Now;
             VacationType = vacationType;
             Applicant = applicant;
+            ImageFilePath = imageFilePath;
         }
-
-        public Vacation(DateTime beginningDate, DateTime endDate, bool halfDayVacation, bool accepted, VacationType vacationType, User applicant)
-            : this(beginningDate, endDate, vacationType, applicant)
-        {
-            HalfDayVacation = halfDayVacation;
-            Accepted = accepted;
-        }
+        
     }
 }

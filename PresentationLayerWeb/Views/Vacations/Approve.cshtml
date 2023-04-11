@@ -43,6 +43,10 @@
                         <input class="form-check-input" asp-for="HalfDayVacation"/> Half Day
                     </label>
                 </div>
+                @if (Model.ImageFilePath != string.Empty)
+                {
+                    <img src="~/images/@Model.ImageFilePath" alt="Image"/>
+                }
                 <div class="row">
                     <p>
                         <div class="col-6 form-group">

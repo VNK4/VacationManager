@@ -19,6 +19,9 @@ public class VacationViewModel : IValidatableObject
     [Required, DisplayName("Vacation Type")]
     public VacationType VacationType { get; set; }
     public User? Applicant { get; set; }
+    [DisplayName("Image")]
+    public IFormFile? VacationImage { get; set; }
+    public string? ImageFilePath { get; set; }
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
         if (BeginningDate > EndDate)

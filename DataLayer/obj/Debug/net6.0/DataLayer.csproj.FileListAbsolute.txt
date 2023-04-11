@@ -49,3 +49,20 @@ D:\School\SoftEngi\VacationManager\DataLayer\obj\Debug\net6.0\refint\DataLayer.d
 D:\School\SoftEngi\VacationManager\DataLayer\obj\Debug\net6.0\DataLayer.pdb
 D:\School\SoftEngi\VacationManager\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
 D:\School\SoftEngi\VacationManager\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\DataLayer.dll
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CopyComplete
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.dll
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
+C:\Users\Admin\Desktop\Vacation manager\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
